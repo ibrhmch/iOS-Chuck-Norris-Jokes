@@ -11,6 +11,11 @@
 		59F9BD372ABCCE40007AD233 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD362ABCCE40007AD233 /* ContentView.swift */; };
 		59F9BD392ABCCE41007AD233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F9BD382ABCCE41007AD233 /* Assets.xcassets */; };
 		59F9BD3C2ABCCE41007AD233 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F9BD3B2ABCCE41007AD233 /* Preview Assets.xcassets */; };
+		59F9BD602ABCE8A4007AD233 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD5F2ABCE8A4007AD233 /* JokeModel.swift */; };
+		59F9BD622ABCE931007AD233 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD612ABCE931007AD233 /* CategoriesViewModel.swift */; };
+		59F9BD642ABCE9F6007AD233 /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD632ABCE9F6007AD233 /* JokeViewModel.swift */; };
+		59F9BD682ABCEB84007AD233 /* CategoriesNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD672ABCEB84007AD233 /* CategoriesNewView.swift */; };
+		59F9BD6A2ABCEC34007AD233 /* JokeNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD692ABCEC34007AD233 /* JokeNewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		59F9BD362ABCCE40007AD233 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		59F9BD382ABCCE41007AD233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59F9BD3B2ABCCE41007AD233 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		59F9BD5F2ABCE8A4007AD233 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
+		59F9BD612ABCE931007AD233 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		59F9BD632ABCE9F6007AD233 /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
+		59F9BD672ABCEB84007AD233 /* CategoriesNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesNewView.swift; sourceTree = "<group>"; };
+		59F9BD692ABCEC34007AD233 /* JokeNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeNewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,9 @@
 		59F9BD332ABCCE40007AD233 /* HW4-ChuckNorris-JokesApp */ = {
 			isa = PBXGroup;
 			children = (
+				59F9BD5E2ABCE886007AD233 /* ViewModel */,
+				59F9BD5D2ABCE87F007AD233 /* View */,
+				59F9BD5C2ABCE873007AD233 /* Model */,
 				59F9BD342ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift */,
 				59F9BD362ABCCE40007AD233 /* ContentView.swift */,
 				59F9BD382ABCCE41007AD233 /* Assets.xcassets */,
@@ -65,6 +78,32 @@
 				59F9BD3B2ABCCE41007AD233 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		59F9BD5C2ABCE873007AD233 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59F9BD5F2ABCE8A4007AD233 /* JokeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59F9BD5D2ABCE87F007AD233 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59F9BD672ABCEB84007AD233 /* CategoriesNewView.swift */,
+				59F9BD692ABCEC34007AD233 /* JokeNewView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		59F9BD5E2ABCE886007AD233 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				59F9BD612ABCE931007AD233 /* CategoriesViewModel.swift */,
+				59F9BD632ABCE9F6007AD233 /* JokeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F9BD6A2ABCEC34007AD233 /* JokeNewView.swift in Sources */,
+				59F9BD642ABCE9F6007AD233 /* JokeViewModel.swift in Sources */,
+				59F9BD682ABCEB84007AD233 /* CategoriesNewView.swift in Sources */,
 				59F9BD372ABCCE40007AD233 /* ContentView.swift in Sources */,
 				59F9BD352ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift in Sources */,
+				59F9BD622ABCE931007AD233 /* CategoriesViewModel.swift in Sources */,
+				59F9BD602ABCE8A4007AD233 /* JokeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

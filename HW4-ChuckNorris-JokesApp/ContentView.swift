@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            CategoriesView(backgroundColor: $backgroundColor)
+            CategoriesNewView(backgroundColor: $backgroundColor)
                 .tabItem{
                     Label("Jokes", systemImage: "house")
             }
@@ -26,108 +26,6 @@ struct ContentView: View {
 
         }
     }
-}
-
-struct CategoriesView: View {
-    @Binding var backgroundColor: Color
-    @State var categories: [String] = ["sport", "fashion"]
-    @State var isLoading: Bool = true
-    
-    
-    func getChuckJokesCategories() async -> () {
-        do {
-            let (data, _) = try await URLSession.shared.data(from: URL(string: "https://api.chucknorris.io/jokes/categories")!)
-            categories = try JSONDecoder().decode([String].self, from: data)
-        } catch {
-            categories = ["sport", "fashion"]
-        }
-        isLoading = false
-    }
-    
-    var body: some View{
-        NavigationStack {
-            if isLoading{
-                Text(".. loading ..")
-            } else {
-                List(categories, id: \.self) { item in
-                    NavigationLink(destination: JokeView(backgroundColor: $backgroundColor, category: .constant(item))) {
-                        Text("\(item)")
-                    }
-                }
-                .navigationBarTitle("Joke Categories")
-            }
-        }
-        .background(backgroundColor)
-        .task {
-            await getChuckJokesCategories()
-        }
-    }
-}
-
-struct Joke: Codable {
-    let icon_url: String
-    let id: String
-    let url: String
-    let value: String
-}
-
-
-func getRandomJoke(category: String = "travel") async -> String? {
-    do {
-        let (data, _) = try await URLSession.shared.data(from: URL(string: "https://api.chucknorris.io/jokes/random?category=\(category)")!)
-        let joke = try JSONDecoder().decode(Joke.self, from: data)
-        return joke.value
-    } catch {
-        return nil
-    }
-}
-
-struct JokeView: View {
-    @Binding var backgroundColor: Color
-    @Binding var category: String
-    @State var value: String = " .. loading .."
-    
-    var body: some View {
-        VStack {
-            Text("\(value)")
-            .padding(50)
-            .multilineTextAlignment(.center)
-            .background(Color.gray)
-            .foregroundColor(Color.white)
-            .cornerRadius(7)
-            .overlay(
-                RoundedRectangle(cornerRadius: 7)
-                    .stroke(Color.black, lineWidth: 1)
-                )
-            
-            Button("Refresh ↝"){
-                Task{
-                    let newJoke = await getRandomJoke(category: category)
-                    value = (newJoke ?? value)!
-                }
-            }
-            .padding(20)
-            .background(Color.indigo)
-            .foregroundColor(Color.white)
-            .cornerRadius(7)
-            .overlay(
-                RoundedRectangle(cornerRadius: 7)
-                    .stroke(Color.black, lineWidth: 1)
-                )
-            .offset(y:100)
-            
-        }
-        .padding()
-        .frame(width: 400, height: 700)
-        .background(backgroundColor)
-        .onAppear {
-            Task {
-                let newJoke = await getRandomJoke(category: category)
-                value = (newJoke ?? value)!
-            }
-        }
-    }
-
 }
 
 struct DetailView: View {
