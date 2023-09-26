@@ -10,6 +10,7 @@ import SwiftUI
 struct CategoriesNewView: View {
     @Binding var backgroundColor: Color
     @ObservedObject var viewModel = CategoriesViewModel()
+    @State var searchText: String = ""
     
     var body: some View {
             NavigationStack {
@@ -18,11 +19,12 @@ struct CategoriesNewView: View {
                         .progressViewStyle(CircularProgressViewStyle())
 
                 } else {
-                    List(viewModel.categories, id: \.self) { item in
+                    List(searchResults, id: \.self) { item in
                         NavigationLink(destination: JokeNewView(backgroundColor: $backgroundColor, category: .constant(item))) {
                             Text("\(item)")
                         }
                     }
+                    .searchable(text: $searchText)
                     .navigationBarTitle("Joke Categories")
                 }
             }
@@ -30,5 +32,13 @@ struct CategoriesNewView: View {
             .task {
                 await viewModel.getChuckJokesCategories()
             }
+    }
+    
+    var searchResults: [String] {
+        if searchText.isEmpty {
+            return viewModel.categories
+        } else {
+            return viewModel.categories.filter { $0.contains(searchText.lowercased()) }
+        }
     }
 }
