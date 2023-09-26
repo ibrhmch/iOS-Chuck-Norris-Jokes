@@ -16,33 +16,38 @@ struct JokeNewView: View {
 
     var body: some View {
         VStack {
-            Text("\(joke)")
-            .padding(50)
-            .multilineTextAlignment(.center)
-            .background(Color.gray)
-            .foregroundColor(Color.white)
-            .cornerRadius(7)
-            .overlay(
-                RoundedRectangle(cornerRadius: 7)
-                    .stroke(Color.black, lineWidth: 1)
-                )
-            
-            Button("Refresh ↝"){
-                Task{
-                    let newJoke = await getRandomJoke(category: category)
-                    joke = (newJoke ?? viewModel.joke)!
-                }
+            if firstAppear{
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
             }
-            .padding(20)
-            .background(Color.indigo)
-            .foregroundColor(Color.white)
-            .cornerRadius(7)
-            .overlay(
-                RoundedRectangle(cornerRadius: 7)
-                    .stroke(Color.black, lineWidth: 1)
-                )
-            .offset(y:100)
-            
+            else {
+                Text("\(joke)")
+                .padding(50)
+                .multilineTextAlignment(.center)
+                .background(Color.gray)
+                .foregroundColor(Color.white)
+                .cornerRadius(7)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 7)
+                        .stroke(Color.black, lineWidth: 1)
+                    )
+                
+                Button("Refresh ↝"){
+                    Task{
+                        let newJoke = await getRandomJoke(category: category)
+                        joke = (newJoke ?? viewModel.joke)!
+                    }
+                }
+                .padding(20)
+                .background(Color.indigo)
+                .foregroundColor(Color.white)
+                .cornerRadius(7)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 7)
+                        .stroke(Color.black, lineWidth: 1)
+                    )
+                .offset(y:100)
+            }
         }
         .padding()
         .frame(width: 400, height: 700)
@@ -52,8 +57,8 @@ struct JokeNewView: View {
                 Task {
                     await viewModel.fetchJoke(category: category)
                     joke = viewModel.joke
+                    firstAppear = false
                 }
-                firstAppear = false
             }
         }
     }

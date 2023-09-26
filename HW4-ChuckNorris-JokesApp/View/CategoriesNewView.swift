@@ -15,6 +15,8 @@ struct CategoriesNewView: View {
             NavigationStack {
                 if viewModel.isLoading{
                     ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+
                 } else {
                     List(viewModel.categories, id: \.self) { item in
                         NavigationLink(destination: JokeNewView(backgroundColor: $backgroundColor, category: .constant(item))) {
