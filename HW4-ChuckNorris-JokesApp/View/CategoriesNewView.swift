@@ -14,7 +14,7 @@ struct CategoriesNewView: View {
     var body: some View {
             NavigationStack {
                 if viewModel.isLoading{
-                    Text(".. loading ..")
+                    ProgressView()
                 } else {
                     List(viewModel.categories, id: \.self) { item in
                         NavigationLink(destination: JokeNewView(backgroundColor: $backgroundColor, category: .constant(item))) {
@@ -28,8 +28,5 @@ struct CategoriesNewView: View {
             .task {
                 await viewModel.getChuckJokesCategories()
             }
-        .task {
-            await viewModel.getChuckJokesCategories()
-        }
     }
 }

@@ -10,11 +10,13 @@ import SwiftUI
 struct JokeNewView: View {
     @Binding var backgroundColor: Color
     @Binding var category: String
+    @State var joke: String = ".. loading .."
+    @State var firstAppear: Bool = true
     @ObservedObject var viewModel = JokeViewModel()
 
     var body: some View {
         VStack {
-            Text("\(viewModel.joke)")
+            Text("\(joke)")
             .padding(50)
             .multilineTextAlignment(.center)
             .background(Color.gray)
@@ -28,7 +30,7 @@ struct JokeNewView: View {
             Button("Refresh ↝"){
                 Task{
                     let newJoke = await getRandomJoke(category: category)
-                    viewModel.joke = (newJoke ?? viewModel.joke)!
+                    joke = (newJoke ?? viewModel.joke)!
                 }
             }
             .padding(20)
@@ -46,9 +48,12 @@ struct JokeNewView: View {
         .frame(width: 400, height: 700)
         .background(backgroundColor)
         .onAppear {
-            Task {
-                await viewModel.fetchJoke(category: category)
-                viewModel.joke = viewModel.joke
+            if firstAppear{
+                Task {
+                    await viewModel.fetchJoke(category: category)
+                    joke = viewModel.joke
+                }
+                firstAppear = false
             }
         }
     }
