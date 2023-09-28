@@ -19,6 +19,12 @@ struct ContentView: View {
                 .tabItem{
                     Label("Jokes", systemImage: "house")
             }
+            
+            JokesSearchView()
+                .tabItem{
+                    Label("Search", systemImage: "magnifyingglass")
+            }
+            
             Settings(backgroundColor: $backgroundColor, explicitAllowed: $explicitAllowed)
                 .tabItem{
                     Label("Settings",
@@ -35,7 +41,7 @@ struct DetailView: View {
     
     var body: some View {
         VStack{
-            Toggle("Allow Explicit Jokes", isOn: $explicitAllowed)
+            Toggle("Explicit Category", isOn: $explicitAllowed)
             
             Button("Randomize the background color ↝"){
                 backgroundColor = randomColor()
@@ -73,7 +79,7 @@ struct Settings: View {
                 .background(Color.black)
                 .foregroundColor(Color.white)
                 
-                Button("Reset all Settings"){
+                Button("Reset the color"){
                     showingSheet = true
                 }
                 .frame(width: 400, height: 50)
