@@ -11,14 +11,15 @@ struct ContentView: View {
     @State var name: String = "John"
     @State var showHello: Bool = false
     @State var backgroundColor: Color = Color.white
+    @State var explicitAllowed: Bool = true
     
     var body: some View {
         TabView {
-            CategoriesNewView(backgroundColor: $backgroundColor)
+            CategoriesNewView(backgroundColor: $backgroundColor, explicitAllowed: $explicitAllowed)
                 .tabItem{
                     Label("Jokes", systemImage: "house")
             }
-            Settings(backgroundColor: $backgroundColor)
+            Settings(backgroundColor: $backgroundColor, explicitAllowed: $explicitAllowed)
                 .tabItem{
                     Label("Settings",
                     systemImage: "gearshape")
@@ -30,8 +31,12 @@ struct ContentView: View {
 
 struct DetailView: View {
     @Binding var backgroundColor: Color
+    @Binding var explicitAllowed: Bool
+    
     var body: some View {
         VStack{
+            Toggle("Allow Explicit Jokes", isOn: $explicitAllowed)
+            
             Button("Randomize the background color ↝"){
                 backgroundColor = randomColor()
                 // Call the function using an async task
@@ -54,13 +59,15 @@ struct DetailView: View {
 
 struct Settings: View {
     @Binding var backgroundColor: Color
+    @Binding var explicitAllowed: Bool
     @State var showingSheet = false
     
     var body: some View{
         NavigationStack{
             VStack{
                 NavigationLink("Customize the App") {
-                    DetailView(backgroundColor: $backgroundColor)
+                    DetailView(backgroundColor: $backgroundColor,
+                               explicitAllowed: $explicitAllowed)
                 }
                 .frame(width: 400, height: 50)
                 .background(Color.black)

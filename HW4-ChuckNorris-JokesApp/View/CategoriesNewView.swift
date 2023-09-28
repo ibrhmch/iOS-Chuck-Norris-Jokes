@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoriesNewView: View {
     @Binding var backgroundColor: Color
+    @Binding var explicitAllowed: Bool
     @ObservedObject var viewModel = CategoriesViewModel()
     @State var searchText: String = ""
     
@@ -36,9 +37,9 @@ struct CategoriesNewView: View {
     
     var searchResults: [String] {
         if searchText.isEmpty {
-            return viewModel.categories
+            return explicitAllowed ? viewModel.categories : viewModel.categories.filter({$0 != "explicit"})
         } else {
-            return viewModel.categories.filter { $0.contains(searchText.lowercased()) }
+            return explicitAllowed ? viewModel.categories.filter { $0.contains(searchText.lowercased()) } : viewModel.categories.filter { $0.contains(searchText.lowercased()) }.filter({$0 != "explicit"})
         }
     }
 }
