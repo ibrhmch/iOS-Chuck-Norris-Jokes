@@ -25,7 +25,11 @@ struct JokesSearchView: View {
                     }
                 }
             
-            List(searchJokes.results) { joke in
+            if searchJokes.results.total > 0{
+                Text("\(searchJokes.results.total) jokes found")
+            }
+            
+            List(searchJokes.results.result) { joke in
                 Text(joke.value)
             }
         }
