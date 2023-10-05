@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct JokeNewView: View {
-    @Binding var backgroundColor: Color
+    let backgroundColor: Color
     let category: String
     @State var joke: String = ".. loading .."
     @State var firstAppear: Bool = true
