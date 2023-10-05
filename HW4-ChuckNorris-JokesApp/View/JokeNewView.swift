@@ -34,8 +34,8 @@ struct JokeNewView: View {
                 
                 Button("Refresh ↝"){
                     Task{
-                        let newJoke = await getRandomJoke(category: category)
-                        joke = (newJoke ?? viewModel.joke)!
+                        await viewModel.setJoke(category: category)
+                        joke = viewModel.joke
                     }
                 }
                 .padding(20)
