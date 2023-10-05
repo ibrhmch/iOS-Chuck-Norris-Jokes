@@ -11,11 +11,11 @@ struct ContentView: View {
     @State var name: String = "John"
     @State var showHello: Bool = false
     @State var backgroundColor: Color = Color.white
-    @State var explicitAllowed: Bool = true
+    @State var explicitCategoryAllowed: Bool = true
     
     var body: some View {
         TabView {
-            CategoriesNewView(backgroundColor: $backgroundColor, explicitAllowed: $explicitAllowed)
+            CategoriesNewView(backgroundColor: $backgroundColor, explicitCategoryAllowed: $explicitCategoryAllowed)
                 .tabItem{
                     Label("Jokes", systemImage: "house")
             }
@@ -25,7 +25,7 @@ struct ContentView: View {
                     Label("Search", systemImage: "magnifyingglass")
             }
             
-            Settings(backgroundColor: $backgroundColor, explicitAllowed: $explicitAllowed)
+            Settings(backgroundColor: $backgroundColor, explicitAllowed: $explicitCategoryAllowed)
                 .tabItem{
                     Label("Settings",
                     systemImage: "gearshape")
