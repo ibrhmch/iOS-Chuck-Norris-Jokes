@@ -34,8 +34,10 @@ struct JokeNewView: View {
                 
                 Button("Refresh ↝"){
                     Task{
+                        firstAppear = true
                         await viewModel.setJoke(category: category)
                         joke = viewModel.joke
+                        firstAppear = false
                     }
                 }
                 .padding(20)
