@@ -9,7 +9,7 @@ import SwiftUI
 
 struct JokeNewView: View {
     @Binding var backgroundColor: Color
-    @Binding var category: String
+    let category: String
     @State var joke: String = ".. loading .."
     @State var firstAppear: Bool = true
     @ObservedObject var viewModel = JokeViewModel()
