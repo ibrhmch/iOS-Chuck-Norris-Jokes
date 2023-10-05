@@ -9,7 +9,6 @@ import SwiftUI
 
 struct JokesSearchView: View {
     @ObservedObject var searchJokes = JokesSearchViewModel()
-    @State var search: String = ""
     
     var body: some View {
         VStack{
