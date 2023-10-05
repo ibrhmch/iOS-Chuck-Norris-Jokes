@@ -1,7 +1,7 @@
 import SwiftUI
 
-class JokeViewModel: ObservableObject {
-    @Published var joke: String = " .. loading .."
+class JokeViewModel {
+    var joke: String = " .. loading .."
 
     func setJoke(category: String) async {
         joke = await getRandomJoke(category: category) ?? ""
