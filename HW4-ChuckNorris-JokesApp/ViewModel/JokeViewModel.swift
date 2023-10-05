@@ -7,7 +7,7 @@ class JokeViewModel {
         joke = await getRandomJoke(category: category) ?? ""
     }
     
-    func getRandomJoke(category: String = "travel") async -> String? {
+    private func getRandomJoke(category: String = "travel") async -> String? {
         do {
             let (data, _) = try await URLSession.shared.data(from: URL(string: "https://api.chucknorris.io/jokes/random?category=\(category)")!)
             let joke = try JSONDecoder().decode(Joke.self, from: data)
