@@ -55,7 +55,7 @@ struct JokeNewView: View {
         .onAppear {
             if firstAppear{
                 Task {
-                    await viewModel.fetchJoke(category: category)
+                    await viewModel.setJoke(category: category)
                     joke = viewModel.joke
                     firstAppear = false
                 }
