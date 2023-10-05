@@ -21,7 +21,7 @@ struct CategoriesNewView: View {
 
                 } else {
                     List(searchResults, id: \.self) { item in
-                        NavigationLink(destination: JokeNewView(backgroundColor: $backgroundColor, category: item)) {
+                        NavigationLink(destination: JokeNewView(backgroundColor: backgroundColor, category: item)) {
                             Text("\(item)")
                         }
                     }
