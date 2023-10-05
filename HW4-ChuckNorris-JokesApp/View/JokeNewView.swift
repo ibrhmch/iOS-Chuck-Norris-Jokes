@@ -12,7 +12,7 @@ struct JokeNewView: View {
     let category: String
     @State var joke: String = ".. loading .."
     @State var firstAppear: Bool = true
-    @ObservedObject var viewModel = JokeViewModel()
+    var viewModel = JokeViewModel()
 
     var body: some View {
         VStack {
