@@ -12,7 +12,13 @@ struct JokeNewView: View {
     let category: String
     @State var joke: String = ".. loading .."
     @State var firstAppear: Bool = true
-    var viewModel = JokeViewModel()
+    var viewModel: JokeViewModel
+    
+    init(backgroundColor: Color, category: String){
+        self.backgroundColor = backgroundColor
+        self.category = category
+        self.viewModel = JokeViewModel(category: self.category)
+    }
 
     var body: some View {
         VStack {
@@ -35,7 +41,7 @@ struct JokeNewView: View {
                 Button("Refresh ↝"){
                     Task{
                         firstAppear = true
-                        await viewModel.setJoke(category: category)
+                        viewModel.setJoke(category)
                         joke = viewModel.joke
                         firstAppear = false
                     }
@@ -54,10 +60,10 @@ struct JokeNewView: View {
         .padding()
         .frame(width: 400, height: 700)
         .background(backgroundColor)
-        .onAppear {
+        .task {
             if firstAppear{
                 Task {
-                    await viewModel.setJoke(category: category)
+                    viewModel.setJoke(category)
                     joke = viewModel.joke
                     firstAppear = false
                 }
