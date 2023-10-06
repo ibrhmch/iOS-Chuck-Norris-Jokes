@@ -2,9 +2,15 @@ import SwiftUI
 
 class JokeViewModel {
     var joke: String = " .. loading .."
-
-    func setJoke(category: String) async {
-        joke = await getRandomJoke(category: category) ?? ""
+    
+    init (category: String){
+        setJoke(category)
+    }
+    
+    func setJoke(_ category: String) {
+        Task{
+            joke = await getRandomJoke(category: category) ?? ""
+        }
     }
     
     private func getRandomJoke(category: String = "travel") async -> String? {
