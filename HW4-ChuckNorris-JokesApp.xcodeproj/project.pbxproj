@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		594B50342ACFAED20001B360 /* randomColorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594B50332ACFAED20001B360 /* randomColorFunction.swift */; };
+		594B50362ACFAF3D0001B360 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594B50352ACFAF3D0001B360 /* SettingsView.swift */; };
 		596D7B012AC612BC00BB0935 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D7B002AC612BC00BB0935 /* SearchModel.swift */; };
 		596D7B032AC614EC00BB0935 /* JokesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D7B022AC614EC00BB0935 /* JokesSearchView.swift */; };
 		596D7B052AC6158A00BB0935 /* JokesSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D7B042AC6158A00BB0935 /* JokesSearchViewModel.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		594B50332ACFAED20001B360 /* randomColorFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomColorFunction.swift; sourceTree = "<group>"; };
+		594B50352ACFAF3D0001B360 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		596D7B002AC612BC00BB0935 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		596D7B022AC614EC00BB0935 /* JokesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesSearchView.swift; sourceTree = "<group>"; };
 		596D7B042AC6158A00BB0935 /* JokesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesSearchViewModel.swift; sourceTree = "<group>"; };
@@ -48,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		594B50322ACFAE960001B360 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				594B50332ACFAED20001B360 /* randomColorFunction.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		59F9BD282ABCCE3F007AD233 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +79,7 @@
 		59F9BD332ABCCE40007AD233 /* HW4-ChuckNorris-JokesApp */ = {
 			isa = PBXGroup;
 			children = (
+				594B50322ACFAE960001B360 /* Helpers */,
 				59F9BD5E2ABCE886007AD233 /* ViewModel */,
 				59F9BD5D2ABCE87F007AD233 /* View */,
 				59F9BD5C2ABCE873007AD233 /* Model */,
@@ -101,6 +114,7 @@
 				59F9BD672ABCEB84007AD233 /* CategoriesNewView.swift */,
 				59F9BD692ABCEC34007AD233 /* JokeNewView.swift */,
 				596D7B022AC614EC00BB0935 /* JokesSearchView.swift */,
+				594B50352ACFAF3D0001B360 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,10 +203,12 @@
 				59F9BD642ABCE9F6007AD233 /* JokeViewModel.swift in Sources */,
 				596D7B032AC614EC00BB0935 /* JokesSearchView.swift in Sources */,
 				59F9BD682ABCEB84007AD233 /* CategoriesNewView.swift in Sources */,
+				594B50342ACFAED20001B360 /* randomColorFunction.swift in Sources */,
 				596D7B012AC612BC00BB0935 /* SearchModel.swift in Sources */,
 				596D7B052AC6158A00BB0935 /* JokesSearchViewModel.swift in Sources */,
 				59F9BD372ABCCE40007AD233 /* ContentView.swift in Sources */,
 				59F9BD352ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift in Sources */,
+				594B50362ACFAF3D0001B360 /* SettingsView.swift in Sources */,
 				59F9BD622ABCE931007AD233 /* CategoriesViewModel.swift in Sources */,
 				59F9BD602ABCE8A4007AD233 /* JokeModel.swift in Sources */,
 			);
