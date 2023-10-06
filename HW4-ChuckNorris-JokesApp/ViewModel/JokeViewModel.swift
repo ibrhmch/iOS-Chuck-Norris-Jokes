@@ -8,7 +8,7 @@ class JokeViewModel {
     }
     
     func setJoke(_ category: String) {
-        Task{
+        Task{ @MainActor in
             joke = await getRandomJoke(category: category) ?? ""
         }
     }
