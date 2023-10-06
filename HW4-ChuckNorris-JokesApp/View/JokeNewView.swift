@@ -39,12 +39,10 @@ struct JokeNewView: View {
                     )
                 
                 Button("Refresh ↝"){
-                    Task{
                         firstAppear = true
                         viewModel.setJoke(category)
                         joke = viewModel.joke
                         firstAppear = false
-                    }
                 }
                 .padding(20)
                 .background(Color.indigo)
@@ -62,11 +60,8 @@ struct JokeNewView: View {
         .background(backgroundColor)
         .task {
             if firstAppear{
-                Task {
-                    viewModel.setJoke(category)
                     joke = viewModel.joke
                     firstAppear = false
-                }
             }
         }
     }
