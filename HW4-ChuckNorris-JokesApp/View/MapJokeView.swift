@@ -6,13 +6,37 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct MapJokeView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    @ObservedObject var mapJokeVM: MapJokeViewModel
+    
+    var countriesWithCoordinates: [Country] {
+        return self.mapJokeVM.countries.filter({
+            country in country.capitalInfo.coordinates != nil
+        })
     }
-}
-
-#Preview {
-    MapJokeView()
+    
+    var body: some View {
+        Map {
+            ForEach(countriesWithCoordinates) { country in
+                Annotation(country.name.common, coordinate: country.capitalInfo.coordinates!) {
+                    NavigationLink {
+                        CountryJokeView(country: country.name.common)
+                    } label: {
+                        Circle()
+                            .stroke(.red, lineWidth: 3)
+                            .fill(.orange)
+                            .frame(width: 20, height: 20)
+                            .shadow(radius: 10)
+                    }
+                }
+            }
+        }
+        .mapStyle(.imagery(elevation: .realistic))
+        .mapControls {
+            MapUserLocationButton()
+            MapCompass()
+        }
+    }
 }
