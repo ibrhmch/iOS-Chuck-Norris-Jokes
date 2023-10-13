@@ -8,11 +8,37 @@
 import SwiftUI
 
 struct CountryJokeView: View {
+    @ObservedObject var jokeSearchViewModel = JokesSearchViewModel()
+    var countryName: String
+    @State var loadingJoke: Bool = true
+    
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            if loadingJoke {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+            }
+            else{
+                Text(countryName)
+                if jokeSearchViewModel.results.result.count > 0 {
+                    List(jokeSearchViewModel.results.result) { joke in
+                        Text(joke.value)
+                    }
+                }else{
+                    Text("Try a different country")
+                }
+            }
+        }
+        .task{
+            jokeSearchViewModel.search = countryName
+            await jokeSearchViewModel.getJokes()
+            self.loadingJoke = false
+        }
     }
 }
 
 #Preview {
-    CountryJokeView()
+    CountryJokeView(countryName: "USA")
 }
