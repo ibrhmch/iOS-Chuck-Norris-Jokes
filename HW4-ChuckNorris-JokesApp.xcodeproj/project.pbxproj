@@ -12,10 +12,10 @@
 		596D7B012AC612BC00BB0935 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D7B002AC612BC00BB0935 /* SearchModel.swift */; };
 		596D7B032AC614EC00BB0935 /* JokesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D7B022AC614EC00BB0935 /* JokesSearchView.swift */; };
 		596D7B052AC6158A00BB0935 /* JokesSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D7B042AC6158A00BB0935 /* JokesSearchViewModel.swift */; };
-		59D2B7422AD88912005E6558 /* MapJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B7412AD88911005E6558 /* MapJokeView.swift */; };
-		59D2B7442AD88BDA005E6558 /* CountriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B7432AD88BDA005E6558 /* CountriesModel.swift */; };
-		59D2B7462AD88D07005E6558 /* MapJokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B7452AD88D07005E6558 /* MapJokeViewModel.swift */; };
-		59D2B7482AD894AC005E6558 /* CountryJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B7472AD894AC005E6558 /* CountryJokeView.swift */; };
+		59D2B74B2AD8DDF2005E6558 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B74A2AD8DDF2005E6558 /* CountryModel.swift */; };
+		59D2B74E2AD8E5BF005E6558 /* CountryJokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B74D2AD8E5BF005E6558 /* CountryJokeViewModel.swift */; };
+		59D2B7502AD8E693005E6558 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B74F2AD8E693005E6558 /* MapView.swift */; };
+		59D2B7522AD8EAC4005E6558 /* CountryJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B7512AD8EAC4005E6558 /* CountryJokeView.swift */; };
 		59F9BD352ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD342ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift */; };
 		59F9BD372ABCCE40007AD233 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD362ABCCE40007AD233 /* ContentView.swift */; };
 		59F9BD392ABCCE41007AD233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F9BD382ABCCE41007AD233 /* Assets.xcassets */; };
@@ -33,10 +33,10 @@
 		596D7B002AC612BC00BB0935 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		596D7B022AC614EC00BB0935 /* JokesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesSearchView.swift; sourceTree = "<group>"; };
 		596D7B042AC6158A00BB0935 /* JokesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesSearchViewModel.swift; sourceTree = "<group>"; };
-		59D2B7412AD88911005E6558 /* MapJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapJokeView.swift; sourceTree = "<group>"; };
-		59D2B7432AD88BDA005E6558 /* CountriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModel.swift; sourceTree = "<group>"; };
-		59D2B7452AD88D07005E6558 /* MapJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapJokeViewModel.swift; sourceTree = "<group>"; };
-		59D2B7472AD894AC005E6558 /* CountryJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryJokeView.swift; sourceTree = "<group>"; };
+		59D2B74A2AD8DDF2005E6558 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		59D2B74D2AD8E5BF005E6558 /* CountryJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryJokeViewModel.swift; sourceTree = "<group>"; };
+		59D2B74F2AD8E693005E6558 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		59D2B7512AD8EAC4005E6558 /* CountryJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryJokeView.swift; sourceTree = "<group>"; };
 		59F9BD312ABCCE40007AD233 /* HW4-ChuckNorris-JokesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW4-ChuckNorris-JokesApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F9BD342ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_ChuckNorris_JokesAppApp.swift; sourceTree = "<group>"; };
 		59F9BD362ABCCE40007AD233 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			children = (
 				59F9BD5F2ABCE8A4007AD233 /* JokeModel.swift */,
 				596D7B002AC612BC00BB0935 /* SearchModel.swift */,
-				59D2B7432AD88BDA005E6558 /* CountriesModel.swift */,
+				59D2B74A2AD8DDF2005E6558 /* CountryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,8 +124,8 @@
 				59F9BD692ABCEC34007AD233 /* JokeNewView.swift */,
 				596D7B022AC614EC00BB0935 /* JokesSearchView.swift */,
 				594B50352ACFAF3D0001B360 /* SettingsView.swift */,
-				59D2B7412AD88911005E6558 /* MapJokeView.swift */,
-				59D2B7472AD894AC005E6558 /* CountryJokeView.swift */,
+				59D2B74F2AD8E693005E6558 /* MapView.swift */,
+				59D2B7512AD8EAC4005E6558 /* CountryJokeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,7 +136,7 @@
 				59F9BD612ABCE931007AD233 /* CategoriesViewModel.swift */,
 				59F9BD632ABCE9F6007AD233 /* JokeViewModel.swift */,
 				596D7B042AC6158A00BB0935 /* JokesSearchViewModel.swift */,
-				59D2B7452AD88D07005E6558 /* MapJokeViewModel.swift */,
+				59D2B74D2AD8E5BF005E6558 /* CountryJokeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -212,21 +212,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				59F9BD6A2ABCEC34007AD233 /* JokeNewView.swift in Sources */,
-				59D2B7462AD88D07005E6558 /* MapJokeViewModel.swift in Sources */,
 				59F9BD642ABCE9F6007AD233 /* JokeViewModel.swift in Sources */,
-				59D2B7442AD88BDA005E6558 /* CountriesModel.swift in Sources */,
+				59D2B74B2AD8DDF2005E6558 /* CountryModel.swift in Sources */,
 				596D7B032AC614EC00BB0935 /* JokesSearchView.swift in Sources */,
 				59F9BD682ABCEB84007AD233 /* CategoriesNewView.swift in Sources */,
 				594B50342ACFAED20001B360 /* randomColorFunction.swift in Sources */,
+				59D2B74E2AD8E5BF005E6558 /* CountryJokeViewModel.swift in Sources */,
 				596D7B012AC612BC00BB0935 /* SearchModel.swift in Sources */,
-				59D2B7482AD894AC005E6558 /* CountryJokeView.swift in Sources */,
+				59D2B7522AD8EAC4005E6558 /* CountryJokeView.swift in Sources */,
 				596D7B052AC6158A00BB0935 /* JokesSearchViewModel.swift in Sources */,
 				59F9BD372ABCCE40007AD233 /* ContentView.swift in Sources */,
 				59F9BD352ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift in Sources */,
 				594B50362ACFAF3D0001B360 /* SettingsView.swift in Sources */,
 				59F9BD622ABCE931007AD233 /* CategoriesViewModel.swift in Sources */,
+				59D2B7502AD8E693005E6558 /* MapView.swift in Sources */,
 				59F9BD602ABCE8A4007AD233 /* JokeModel.swift in Sources */,
-				59D2B7422AD88912005E6558 /* MapJokeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

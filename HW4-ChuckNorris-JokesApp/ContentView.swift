@@ -12,11 +12,6 @@ struct ContentView: View {
     @State var showHello: Bool = false
     @State var backgroundColor: Color = Color.white
     @State var explicitCategoryAllowed: Bool = true
-    @ObservedObject var mapJokeVM = MapJokeViewModel()
-    
-    init() {
-        mapJokeVM.getAllCountries()
-    }
     
     var body: some View {
         TabView {
@@ -30,9 +25,9 @@ struct ContentView: View {
                     Label("Search", systemImage: "magnifyingglass")
             }
             
-            MapJokeView(mapJokeVM: mapJokeVM)
+            MapView()
                 .tabItem{
-                    Label("Map Search", systemImage: "globe.americas")
+                    Label("Countries", systemImage: "globe.americas")
             }
             
             Settings(backgroundColor: $backgroundColor, explicitAllowed: $explicitCategoryAllowed)
