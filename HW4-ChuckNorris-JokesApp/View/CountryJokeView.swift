@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct CountryJokeView: View {
-    var country: String
     var body: some View {
-        Text("Country Name: \(country)")
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
+}
+
+#Preview {
+    CountryJokeView()
 }
