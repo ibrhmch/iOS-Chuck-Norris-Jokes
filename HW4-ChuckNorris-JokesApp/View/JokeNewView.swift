@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NotificationCenter
 
 struct JokeNewView: View {
     let backgroundColor: Color
@@ -13,6 +14,7 @@ struct JokeNewView: View {
     @State var joke: String = ".. loading .."
     @State var firstAppear: Bool = true
     var viewModel: JokeViewModel
+    var pushNotificationService = PushNotificationService()
     
     init(backgroundColor: Color, category: String){
         self.backgroundColor = backgroundColor
@@ -53,6 +55,25 @@ struct JokeNewView: View {
                         .stroke(Color.black, lineWidth: 1)
                     )
                 .offset(y:100)
+                
+                Button("Remind me about this country.") {
+                    pushNotificationService.requestPermissions()
+                    
+                    pushNotificationService.scheduleNotification(
+                        title: "your joke reminder",
+                        subtitle: "\(joke)"
+                    )
+                }
+                .padding(12)
+                .background(Color.green)
+                .foregroundColor(Color.white)
+                .cornerRadius(7)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 7)
+                        .stroke(Color.black, lineWidth: 1)
+                    )
+                .offset(y:120)
+                
             }
         }
         .padding()
