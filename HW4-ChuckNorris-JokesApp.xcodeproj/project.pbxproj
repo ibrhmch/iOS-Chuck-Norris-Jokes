@@ -16,6 +16,7 @@
 		59D2B74E2AD8E5BF005E6558 /* CountryJokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B74D2AD8E5BF005E6558 /* CountryJokeViewModel.swift */; };
 		59D2B7502AD8E693005E6558 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B74F2AD8E693005E6558 /* MapView.swift */; };
 		59D2B7522AD8EAC4005E6558 /* CountryJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B7512AD8EAC4005E6558 /* CountryJokeView.swift */; };
+		59D2B7552AD90DDD005E6558 /* PushNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2B7542AD90DDD005E6558 /* PushNotificationsService.swift */; };
 		59F9BD352ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD342ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift */; };
 		59F9BD372ABCCE40007AD233 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9BD362ABCCE40007AD233 /* ContentView.swift */; };
 		59F9BD392ABCCE41007AD233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F9BD382ABCCE41007AD233 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		59D2B74D2AD8E5BF005E6558 /* CountryJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryJokeViewModel.swift; sourceTree = "<group>"; };
 		59D2B74F2AD8E693005E6558 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		59D2B7512AD8EAC4005E6558 /* CountryJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryJokeView.swift; sourceTree = "<group>"; };
+		59D2B7542AD90DDD005E6558 /* PushNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsService.swift; sourceTree = "<group>"; };
 		59F9BD312ABCCE40007AD233 /* HW4-ChuckNorris-JokesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW4-ChuckNorris-JokesApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F9BD342ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW4_ChuckNorris_JokesAppApp.swift; sourceTree = "<group>"; };
 		59F9BD362ABCCE40007AD233 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		59D2B7532AD90D82005E6558 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				59D2B7542AD90DDD005E6558 /* PushNotificationsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		59F9BD282ABCCE3F007AD233 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		59F9BD332ABCCE40007AD233 /* HW4-ChuckNorris-JokesApp */ = {
 			isa = PBXGroup;
 			children = (
+				59D2B7532AD90D82005E6558 /* Services */,
 				594B50322ACFAE960001B360 /* Helpers */,
 				59F9BD5E2ABCE886007AD233 /* ViewModel */,
 				59F9BD5D2ABCE87F007AD233 /* View */,
@@ -224,6 +235,7 @@
 				59F9BD372ABCCE40007AD233 /* ContentView.swift in Sources */,
 				59F9BD352ABCCE40007AD233 /* HW4_ChuckNorris_JokesAppApp.swift in Sources */,
 				594B50362ACFAF3D0001B360 /* SettingsView.swift in Sources */,
+				59D2B7552AD90DDD005E6558 /* PushNotificationsService.swift in Sources */,
 				59F9BD622ABCE931007AD233 /* CategoriesViewModel.swift in Sources */,
 				59D2B7502AD8E693005E6558 /* MapView.swift in Sources */,
 				59F9BD602ABCE8A4007AD233 /* JokeModel.swift in Sources */,
@@ -355,6 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HW4-ChuckNorris-JokesApp/Preview Content\"";
+				DEVELOPMENT_TEAM = PN6CFDV9L8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -384,6 +397,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HW4-ChuckNorris-JokesApp/Preview Content\"";
+				DEVELOPMENT_TEAM = PN6CFDV9L8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
