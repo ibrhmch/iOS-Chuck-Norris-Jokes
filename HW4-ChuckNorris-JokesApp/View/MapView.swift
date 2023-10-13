@@ -6,28 +6,59 @@
 //
 
 import SwiftUI
+import MapKit
 
-struct MapJokeView: View {
-    @ObservedObject var mapJokeVM = MapJokeViewModel()
+struct MapView: View {
+    @ObservedObject var countryJokeViewModel = CountryJokeViewModel()
+    var countriesWithCoordinates: [Country] {
+        return countryJokeViewModel.listOfCountries.filter({ country in
+            country.coordinate != nil
+        })
+    }
     
     var body: some View {
         VStack{
-            if !mapJokeVM.countriesAreloaded {
+            if !countryJokeViewModel.countriesAreloaded {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
             }
             else{
-                List(mapJokeVM.listOfCountries) { country in
-                    Text(country.name.common)
+                NavigationStack{
+                    Map {
+                        ForEach(countriesWithCoordinates) { country in
+                            Annotation(country.name.common, coordinate: country.coordinate!) {
+                                NavigationLink(destination: CountryJokeView(countryName: country.name.common)) {
+                                    Image(systemName: "mappin")
+                                        .foregroundColor(.white)
+                                        .shadow(radius: 10)
+                                }
+                            }
+                        }
+                    }
+                    .mapStyle(.imagery(elevation: .realistic))
+                    .mapControls {
+                        MapUserLocationButton()
+                        MapCompass()
+                        MapScaleView()
+                    }
                 }
             }
         }
         .task {
-            await mapJokeVM.setAllCountries()
+            await countryJokeViewModel.setAllCountries()
         }
     }
 }
 
 #Preview {
-    MapJokeView()
+    MapView()
 }
+
+
+//                NavigationStack{
+//                    List(mapJokeVM.listOfCountries) { country in
+//                        NavigationLink(destination: CountryJokeView(countryName: country.name.common)){
+//                            Text(country.name.common)
+//                        }
+//                    }
+//                }
